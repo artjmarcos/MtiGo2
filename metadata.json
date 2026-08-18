@@ -1,0 +1,6 @@
+{
+  "name": "MtiGo",
+  "description": "App móvil de solicitudes geolocalizadas con micropagos en tiempo real para profesionales, ayuda social y turismo.",
+  "requestFramePermissions": ["camera", "microphone", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

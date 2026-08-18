@@ -1,0 +1,160 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@layer base {
+  :root {
+    --primary: #7BC47F;
+    --primary-dark: #4A9E5C;
+    --primary-light: #B8E0BA;
+    --bg-main: #F4FAF5;
+    --surface: #FFFFFF;
+    --surface-secondary: #E8F5E9;
+    --accent: #FFD166;
+    --success: #4CAF50;
+    --warning: #FFA726;
+    --error: #E57373;
+    --info: #64B5F6;
+    --text-main: #1B3A1F;
+    --text-muted: #5A7D60;
+    --border-color: #E0E8E1;
+  }
+
+  body {
+    background-color: #F4FAF5;
+    color: #1B3A1F;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom animations for clean video-game aesthetic */
+@keyframes soft-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(123, 196, 127, 0.45);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 10px rgba(123, 196, 127, 0);
+  }
+}
+
+@keyframes urgent-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(229, 115, 115, 0.5);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 12px rgba(229, 115, 115, 0);
+  }
+}
+
+@keyframes map-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 2s infinite ease-in-out;
+}
+
+.animate-urgent-pulse {
+  animation: urgent-pulse 1.4s infinite ease-in-out;
+}
+
+.animate-map-float {
+  animation: map-float 3s infinite ease-in-out;
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #E8F5E9 25%, #F4FAF5 50%, #E8F5E9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Accessible large text mode overrides */
+.accessibility-large-text {
+  font-size: 115% !important;
+}
+
+.accessibility-high-contrast {
+  --text-main: #071708 !important;
+  --text-muted: #244629 !important;
+  --border-color: #2e6236 !important;
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4DEC7;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7BC47F;
+}
+
+/* Custom Leaflet Map styling */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  background-color: #0b1d12;
+  z-index: 1;
+}
+
+.custom-leaflet-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 18px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+  border: 1px solid #B8E0BA !important;
+  padding: 0 !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: inherit !important;
+}
+
+.leaflet-popup-tip {
+  background: white !important;
+}
+
+.leaflet-control-attribution {
+  font-size: 9px !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  color: #E2ECE4 !important;
+  border-radius: 6px;
+  margin: 4px !important;
+  padding: 1px 6px !important;
+}
+
+.leaflet-control-attribution a {
+  color: #7BC47F !important;
+  text-decoration: none;
+}
+
